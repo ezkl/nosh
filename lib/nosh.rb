@@ -6,9 +6,7 @@ require_relative 'nosh/version'
 
 module Nosh
   module ObjectExtensions
-    def nosh(url, options = {})
-      parse = options[:parse] || false
-      
+    def nosh(url, parse = false)      
       if (response = ::Typhoeus::Request.get(url)).success?
         parse ? ::Nokogiri.parse(response.body) : response.body
       else
@@ -16,6 +14,12 @@ module Nosh
         nil
       end
     end
+  end
+end
+
+class String
+  def nosh(parse = false)
+    Nosh::ObjectExtensions.nosh(self, parse)
   end
 end
 
