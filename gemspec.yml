@@ -1,0 +1,10 @@
+name: nosh
+summary: Another Typhoeus/Nokogiri wrapper.
+description: A very simple Typhoeus/Nokogiri wrapper. Conceptually based on the eat library.
+license: MIT
+authors: Ezekiel Templin
+email: ezkl@me.com
+homepage: https://github.com/ezkl/nosh
+
+development_dependencies:
+  bundler: ~> 1.0.0
